@@ -75,3 +75,12 @@ def plot_residuals(y_true,y_pred, saveplot=""):
         plt.savefig("./report/{}.png".format(saveplot),format='png')
     return residuals
 
+def residuals_distribution(residuals_predictions):
+    plt.figure(figsize=(9,3.5))
+    bin_cnts, bins =np.histogram(residuals_predictions,bins=800,range=(-400,400))
+    plt.bar(x=bins[:-1],height=bin_cnts, color= "blue",linewidth=0,width=0.5,label="mean: {:0.2f}, $\sigma$= {:0.2f}, $\gamma_1$={:0.2f}".format(bin_cnts.mean(),bin_cnts.std(),stats.skew(bin_cnts)))
+    plt.gca().set( xlabel="Residual ($y_{true}$-$y_{pred}$)",xlim=(-400,400))
+    plt.legend()
+    plt.tight_layout()
+    return bin_cnts
+
