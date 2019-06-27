@@ -9,5 +9,8 @@ The Jupyter notebooks contain the corresponding files for the model development.
 3.
     3.1 Model error (R2, MAE, MAD) using test set, feature importance  
     3.2 Export model for production, recreating a client app to conduct inference via HTTP request
+4. Two extra models:
+    - A Linear Regressor using a QuartileTransformer for the target
+    - A Neural Network Regressor (Multi-Layer Perceptron Regressor)
 
-To see the model error, and conduct inference of the exported model go directly to Notebook n.3.
+To see the model error, and conduct inference of the exported model check notebooks 3 and 4
